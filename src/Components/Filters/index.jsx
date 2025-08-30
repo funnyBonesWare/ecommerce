@@ -1,0 +1,134 @@
+import React from 'react';
+import './styles.css';
+
+const Filters = ({ 
+  filters, 
+  onFilterChange, 
+  categories, 
+  brands, 
+  onClearFilters 
+}) => {
+  const handleCategoryChange = (category) => {
+    onFilterChange({
+      ...filters,
+      selectedCategories: filters.selectedCategories.includes(category)
+        ? filters.selectedCategories.filter(c => c !== category)
+        : [...filters.selectedCategories, category]
+    });
+  };
+
+  const handleBrandChange = (brand) => {
+    onFilterChange({
+      ...filters,
+      selectedBrands: filters.selectedBrands.includes(brand)
+        ? filters.selectedBrands.filter(b => b !== brand)
+        : [...filters.selectedBrands, brand]
+    });
+  };
+
+  const handlePriceRangeChange = (priceRange) => {
+    onFilterChange({
+      ...filters,
+      priceRange: priceRange
+    });
+  };
+
+  const handleRatingChange = (rating) => {
+    onFilterChange({
+      ...filters,
+      minRating: rating
+    });
+  };
+
+
+  return (
+    <div className="filters-sidebar">
+      <div className="filters-header">
+        <h3>Filters</h3>
+        <button className="clear-filters-btn" onClick={onClearFilters}>
+          Clear All
+        </button>
+      </div>
+      
+      <div className="filters-content">
+        {/* Category Filter */}
+        <div className="filter-group">
+          <h4>Categories</h4>
+          <div className="filter-options">
+            {categories.filter(category => category).map(category => (
+              <label key={category} className="filter-option">
+                <input
+                  type="checkbox"
+                  checked={filters.selectedCategories.includes(category)}
+                  onChange={() => handleCategoryChange(category)}
+                />
+                <span className="filter-label">
+                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Brand Filter */}
+        <div className="filter-group">
+          <h4>Brands</h4>
+          <div className="filter-options">
+            {brands.filter(brand => brand).map(brand => (
+              <label key={brand} className="filter-option">
+                <input
+                  type="checkbox"
+                  checked={filters.selectedBrands.includes(brand)}
+                  onChange={() => handleBrandChange(brand)}
+                />
+                <span className="filter-label">{brand}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Price Range Filter */}
+        <div className="filter-group">
+          <h4>Price Range</h4>
+          <div className="price-range">
+            <div className="price-inputs">
+              <input
+                type="number"
+                value={filters.priceRange[0]}
+                onChange={(e) => handlePriceRangeChange([Number(e.target.value), filters.priceRange[1]])}
+                min="0"
+                max="100000"
+              />
+              <span>-</span>
+              <input
+                type="number"
+                value={filters.priceRange[1]}
+                onChange={(e) => handlePriceRangeChange([filters.priceRange[0], Number(e.target.value)])}
+                min="0"
+                max="100000"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Rating Filter */}
+        <div className="filter-group">
+          <h4>Minimum Rating</h4>
+          <div className="rating-filter">
+            {[1, 2, 3, 4, 5].map(rating => (
+              <button
+                key={rating}
+                className={`rating-btn ${filters.minRating === rating ? 'active' : ''}`}
+                onClick={() => handleRatingChange(rating)}
+              >
+                {rating}+
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Filters;
