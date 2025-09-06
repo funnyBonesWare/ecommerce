@@ -1,7 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import StarRating from '../StarRating';
 import './styles.css';
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {
+    navigate(`/product/${product.id}`);
+  };
 
   return (
     <div className="product-card-horizontal">
@@ -29,6 +35,7 @@ const ProductCard = ({ product }) => {
         <button 
           className={`add-to-cart-btn ${product.stock === 0 ? 'disabled' : ''}`}
           disabled={product.stock === 0}
+          onClick={handleViewDetails}
         >
           {product.stock > 0 ? 'View Details' : 'Out of Stock'}
         </button>

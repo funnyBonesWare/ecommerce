@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 import { API_ENDPOINTS } from '../../constants';
 
-export const useProducts = () => {
-  const [allProducts, setAllProducts] = useState([]);
+export const useProduct = (productId) => {
+  const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const getProductsFromAPI = async () => {
+  const getProductFromAPI = async () => {
     try {
       setIsLoading(true);
       
-      const response = await fetch(API_ENDPOINTS.PRODUCTS);
+      const response = await fetch(`${API_ENDPOINTS.PRODUCTS.replace('?limit=194', '')}/${productId}`);
       
       if (!response.ok) {
-        throw new Error('Could not get products from server');
+        throw new Error('Could not get product from server');
       }
       
       const data = await response.json();
-      setAllProducts(data.products);
+      setProduct(data);
       setIsLoading(false);
       
     } catch (err) {
@@ -27,12 +27,15 @@ export const useProducts = () => {
   };
 
   useEffect(() => {
-    getProductsFromAPI();
-  }, []);
+    if (productId) {
+      getProductFromAPI();
+    }
+  }, [productId]);
 
   return {
-    allProducts,
+    product,
     isLoading,
-    errorMessage
+    errorMessage,
+    refetch: getProductFromAPI
   };
 };
