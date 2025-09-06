@@ -4,6 +4,7 @@
   padding: 20px;
   background: #fff;
   min-height: 100vh;
+  margin-top: 70px; /* Account for fixed navbar */
 }
 
 .breadcrumb {
