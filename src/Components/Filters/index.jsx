@@ -1,4 +1,5 @@
 import { RATING_OPTIONS, PRICE_LIMITS } from '../../constants';
+import Button from '../Button';
 import './styles.css';
 
 const Filters = ({ 
@@ -45,9 +46,14 @@ const Filters = ({
     <div className="filters-sidebar">
       <div className="filters-header">
         <h3>Filters</h3>
-        <button className="clear-filters-btn" onClick={onClearFilters}>
+        <Button 
+          variant="outline" 
+          size="small" 
+          onClick={onClearFilters}
+          className="clear-filters-btn"
+        >
           Clear All
-        </button>
+        </Button>
       </div>
       
       <div className="filters-content">
@@ -116,13 +122,15 @@ const Filters = ({
           <h4>Minimum Rating</h4>
           <div className="rating-filter">
             {RATING_OPTIONS.map(rating => (
-              <button
+              <Button
                 key={rating}
-                className={`rating-btn ${filters.minRating === rating ? 'active' : ''}`}
+                variant={filters.minRating === rating ? 'primary' : 'ghost'}
+                size="small"
                 onClick={() => handleRatingChange(rating)}
+                className="rating-btn"
               >
                 {rating}+
-              </button>
+              </Button>
             ))}
           </div>
         </div>

@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import StarRating from '../StarRating';
+import ProductPrice from '../ProductPrice';
+import Button from '../Button';
+import { calculateOriginalPrice } from '../../utils/products/priceUtils';
 import './styles.css';
 
 const ProductCard = ({ product }) => {
@@ -21,24 +24,25 @@ const ProductCard = ({ product }) => {
         <h3 className="product-name">{product.title}</h3>
         <p className="product-brand">{product.brand}</p>
         <StarRating rating={product.rating} />
-        <div className="product-price-section">
-          <p className="product-price">₹{product.price}</p>
-          {product.discountPercentage > 0 && (
-            <span className="discount-badge">
-              -{Math.round(product.discountPercentage)}%
-            </span>
-          )}
-        </div>
+        <ProductPrice 
+          price={product.price}
+          originalPrice={calculateOriginalPrice(product.price, product.discountPercentage)}
+          discountPercentage={product.discountPercentage}
+          size="small"
+          showSavings={false}
+        />
         <p className="product-stock">
           {product.stock > 0 ? `In Stock (${product.stock})` : 'Out of Stock'}
         </p>
-        <button 
-          className={`add-to-cart-btn ${product.stock === 0 ? 'disabled' : ''}`}
+        <Button 
+          variant="secondary"
+          size="small"
           disabled={product.stock === 0}
           onClick={handleViewDetails}
+          className="view-details-btn"
         >
           {product.stock > 0 ? 'View Details' : 'Out of Stock'}
-        </button>
+        </Button>
       </div>
     </div>
   );

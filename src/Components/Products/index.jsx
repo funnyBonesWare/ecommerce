@@ -4,15 +4,15 @@ import Error from '../Error';
 import ProductsHeader from '../ProductsHeader';
 import NoProducts from '../NoProducts';
 import CategorySection from '../CategorySection';
-import { useProducts } from '../../hooks/products';
-import { useFilters } from '../../hooks/filters';
+import { useProducts } from '../../hooks/products/useProducts';
+import { useFilters } from '../../hooks/filters/useFilters';
 import { 
   getUniqueCategories, 
   getUniqueBrands, 
   filterProducts, 
   groupProductsByCategory, 
   getCategoriesToShow 
-} from '../../utils/products';
+} from '../../utils/products/productUtils';
 import './styles.css';
 
 const Products = () => {
