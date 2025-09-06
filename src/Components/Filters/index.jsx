@@ -1,4 +1,3 @@
-import React from 'react';
 import { RATING_OPTIONS, PRICE_LIMITS } from '../../constants';
 import './styles.css';
 

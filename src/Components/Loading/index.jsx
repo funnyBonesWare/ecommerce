@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Loading = ({ message = 'Getting products from server...' }) => {
   return (
     <div className="products-container">

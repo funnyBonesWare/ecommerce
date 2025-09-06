@@ -1,5 +1,3 @@
-import React from 'react';
-
 const NoProducts = ({ 
   title = 'No products match your filters', 
   subtitle = 'Try changing your filter settings' 

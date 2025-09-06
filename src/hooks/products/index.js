@@ -33,7 +33,6 @@ export const useProducts = () => {
   return {
     allProducts,
     isLoading,
-    errorMessage,
-    refetch: getProductsFromAPI
+    errorMessage
   };
 };

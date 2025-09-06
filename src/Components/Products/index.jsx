@@ -1,4 +1,3 @@
-import React from 'react';
 import Filters from '../Filters';
 import Loading from '../Loading';
 import Error from '../Error';
@@ -38,9 +37,7 @@ const Products = () => {
     <div className="products-container">
       <ProductsHeader productCount={productsThatMatchFilters.length} />
       
-      {/* Main layout: filters on left, products on right */}
       <div className="products-layout">
-        {/* Left side: Filter options */}
         <Filters 
           filters={filterSettings}
           onFilterChange={handleFilterChange}

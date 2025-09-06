@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DEFAULT_FILTERS } from '../constants';
+import { DEFAULT_FILTERS } from '../../constants';
 
 export const useFilters = () => {
   const [filterSettings, setFilterSettings] = useState(DEFAULT_FILTERS);

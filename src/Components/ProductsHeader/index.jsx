@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ProductsHeader = ({ productCount, subtitle = 'Browse products by category' }) => {
   return (
     <div className="products-header">
