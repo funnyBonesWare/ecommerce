@@ -1,4 +1,5 @@
 import React from 'react';
+import { RATING_OPTIONS, PRICE_LIMITS } from '../../constants';
 import './styles.css';
 
 const Filters = ({ 
@@ -96,16 +97,16 @@ const Filters = ({
                 type="number"
                 value={filters.priceRange[0]}
                 onChange={(e) => handlePriceRangeChange([Number(e.target.value), filters.priceRange[1]])}
-                min="0"
-                max="100000"
+                min={PRICE_LIMITS.MIN}
+                max={PRICE_LIMITS.MAX}
               />
               <span>-</span>
               <input
                 type="number"
                 value={filters.priceRange[1]}
                 onChange={(e) => handlePriceRangeChange([filters.priceRange[0], Number(e.target.value)])}
-                min="0"
-                max="100000"
+                min={PRICE_LIMITS.MIN}
+                max={PRICE_LIMITS.MAX}
               />
             </div>
           </div>
@@ -115,7 +116,7 @@ const Filters = ({
         <div className="filter-group">
           <h4>Minimum Rating</h4>
           <div className="rating-filter">
-            {[1, 2, 3, 4, 5].map(rating => (
+            {RATING_OPTIONS.map(rating => (
               <button
                 key={rating}
                 className={`rating-btn ${filters.minRating === rating ? 'active' : ''}`}
