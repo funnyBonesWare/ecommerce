@@ -9,7 +9,7 @@ import ProductPrice from '../ProductPrice';
 import QuantitySelector from '../QuantitySelector';
 import ProductSpecs from '../ProductSpecs';
 import Button from '../Button';
-import { calculateOriginalPrice, calculateSavings } from '../../utils/products/priceUtils';
+import { calculateOriginalPrice } from '../../utils/products/priceUtils';
 import './styles.css';
 
 const ProductDetails = () => {
