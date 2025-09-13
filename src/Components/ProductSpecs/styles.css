@@ -1,0 +1,51 @@
+.product-specs {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.product-specs h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  color: #212121;
+}
+
+.specs-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.specs-1-col {
+  grid-template-columns: 1fr;
+}
+
+.specs-2-col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.specs-3-col {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.spec-item:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  font-weight: 500;
+  color: #666;
+}
+
+.spec-value {
+  color: #212121;
+  text-transform: capitalize;
+}
+

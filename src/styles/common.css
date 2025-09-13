@@ -1,0 +1,122 @@
+/* Common Button Styles */
+
+/* 
+ * Common Back Button Usage:
+ * 
+ * <button className="common-back-btn" onClick={handleBackClick}>
+ *   <span className="common-back-icon">‹</span>
+ *   Back
+ * </button>
+ * 
+ * Features:
+ * - Consistent styling across all components
+ * - Hover effects with smooth transitions
+ * - Focus states for accessibility
+ * - Responsive design
+ * - Disabled state support
+ */
+
+/* Back Button - Common Style */
+.common-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #2874f0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.common-back-btn:hover {
+  background-color: #f0f8ff;
+  color: #1a5bb8;
+  transform: translateX(-2px);
+}
+
+.common-back-btn:active {
+  transform: translateX(0);
+  background-color: #e6f2ff;
+}
+
+.common-back-btn:focus {
+  outline: 2px solid #2874f0;
+  outline-offset: 2px;
+}
+
+.common-back-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.common-back-btn:disabled:hover {
+  background-color: transparent;
+  color: #2874f0;
+  transform: none;
+}
+
+/* Back Button Icon */
+.common-back-icon {
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.common-back-btn:hover .common-back-icon {
+  transform: translateX(-2px);
+}
+
+/* Breadcrumb Common Styles */
+.common-breadcrumb {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 0;
+  width: 100%;
+}
+
+.common-breadcrumb-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.common-breadcrumb-path {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.common-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.common-breadcrumb-separator {
+  color: #999;
+  font-size: 12px;
+}
+
+.common-breadcrumb-text {
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.common-breadcrumb-text:hover {
+  color: #2874f0;
+}
+
+/* Responsive design removed - using mobile-first approach */

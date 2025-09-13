@@ -1,0 +1,144 @@
+.category-section {
+  margin-bottom: 3rem;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.category-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scroll-controls {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.scroll-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+  background: white;
+  color: #6c757d;
+}
+
+.scroll-btn:hover:not(:disabled) {
+  background: #8b5cf6;
+  color: white;
+  border-color: #8b5cf6;
+  transform: scale(1.05);
+}
+
+.scroll-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.category-title-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.category-count {
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.view-category-btn {
+  flex-shrink: 0;
+}
+
+.products-horizontal-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+  margin: 0 -0.5rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.products-horizontal-scroll::before,
+.products-horizontal-scroll::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.products-horizontal-scroll::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(248, 249, 250, 0.8), transparent);
+}
+
+.products-horizontal-scroll::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(248, 249, 250, 0.8), transparent);
+}
+
+.products-horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.products-horizontal-scroll::-webkit-scrollbar-track {
+  background: #f1f3f4;
+  border-radius: 4px;
+  margin: 0 0.5rem;
+}
+
+.products-horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.products-horizontal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+.products-horizontal-scroll::-webkit-scrollbar-thumb:active {
+  background: #6d28d9;
+}
+
+/* Firefox scrollbar styling */
+.products-horizontal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #8b5cf6 #f1f3f4;
+}
+
+.products-row {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 0.5rem;
+  min-width: max-content;
+}
+
+/* Responsive Design */
+

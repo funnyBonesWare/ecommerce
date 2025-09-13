@@ -1,0 +1,85 @@
+/* E-commerce Product Details Styles */
+
+.ecommerce-product-details {
+  min-height: 100vh;
+  background-color: #f1f3f6;
+  padding-top: 70px;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+/* Breadcrumb styles are now in Breadcrumb component */
+
+/* Main Product Section */
+.product-main-section {
+  background: white;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.product-container {
+  display: flex;
+  min-height: 350px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Product Images Section */
+.product-images-section {
+  flex: 1;
+  padding: 10px;
+  border-right: 1px solid #e0e0e0;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Product Info Section */
+.product-info-section {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Product Header styles are now in ProductHeader component */
+
+/* Price Section */
+.price-section {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+/* Component styles are now in their respective component files */
+
+/* Quantity & Actions Section */
+.quantity-actions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* Action buttons styles are now in ActionButtons component */
+
+/* Product Specifications - Right column */
+.product-specs-right {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+
+/* Delivery info styles are now in DeliveryInfo component */
+
+
+/* Responsive Design */
+
