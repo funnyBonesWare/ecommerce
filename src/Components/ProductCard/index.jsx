@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="product-card-horizontal">
+    <div className="product-card product-card-horizontal">
       <div className="product-image">
         <img 
           src={product.thumbnail} 
